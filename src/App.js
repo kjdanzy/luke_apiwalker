@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react'
+// import Planets from './components/Planets';
+// import People from './components/People';
+import { Router } from '@reach/router'
+import NavBar from './components/NavBar';
+import Details from './components/Details';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <NavBar path="/" />
+      <Router>
+        <Details path="/:category/:id" />
+        {/* <People path="/:people/:id" >People</People>
+        <Planets path="/:planets/:id">Planets</Planets> */}
+      </Router>
     </div>
   );
 }
